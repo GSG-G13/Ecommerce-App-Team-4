@@ -1,0 +1,263 @@
+.products {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 15px;
+  z-index: 1;
+}
+
+.products .featured-item {
+  width: 20%;
+  position: relative;
+}
+
+.products .featured-item::after {
+  content: "lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem";
+  width: 90%;
+  color: #848484;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  height: 80%;
+  background-color:#50342793;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+
+
+
+
+.products .owl-item img {
+  display: block;
+  width: 100%;
+}
+
+.products .owl-nav.disabled,
+.products .owl-dots.disabled {
+  display: none;
+}
+
+.products .owl-nav .owl-prev,
+.products .owl-nav .owl-next,
+.products .owl-dot {
+  cursor: pointer;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 30px;
+}
+
+.navbar .collapse ul {
+  list-style: none;
+  display: flex;
+  padding-bottom: 30px;
+}
+
+.buttons button {
+  margin-left: 30px;
+  min-width: 80px;
+  border-radius: 5px;
+  color: white;
+  max-height: 40px;
+}
+
+.sellerPord {
+  display: flex;
+  gap: 15px;
+}
+
+button {
+  cursor: pointer;
+
+}
+
+.sellerPord button {
+  min-width: 80px;
+  padding: 10px;
+  max-height: 40px;
+  /* background-color: #503427; */
+  /* color: white; */
+  border-radius: 5px;
+  border: 0;
+  box-shadow: 2px 2px black;
+  border-color: #503427;
+  background-color: #503427;
+  height: 50px;
+  font-family: monospace;
+  font-weight: bold;
+  outline: none;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.5), #503427);
+  border: none;
+  color: #000000;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+
+.search {
+  margin-top: 15px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 30%;
+  left: 50%;
+
+}
+
+.search input {
+  width: 500px;
+  height: 40px;
+  border: 0;
+  border-radius: 7px;
+  margin-right: 15px;
+  text-align: center;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.33);
+}
+
+.search button {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: #503427;
+  height: 40px;
+  padding: 0px 15px;
+  border-radius: 7px;
+  border: 1px solid #503427;
+}
+
+#AddProductForm {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 550px;
+  background: #eeeeee81;
+  border: 2px solid rgba(153, 124, 71, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+
+}
+
+
+#AddProductForm h2 {
+  font-size: 2em;
+  color: #525252;
+  ;
+  text-align: center;
+}
+
+#AddProductForm .inputBox,
+#AddProductForm .imgFile {
+  position: relative;
+  margin: 30px 0;
+  width: 310px;
+  border-bottom: 2px solid #525252;
+
+}
+
+#AddProductForm .inputBox label,
+#AddProductForm .imgFile label {
+  position: absolute;
+  top: -5px;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #525252;
+  font-size: 1em;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+input:focus~label,
+input:valid~label {
+  top: -5px;
+}
+
+#AddProductForm .inputBox input,
+textarea {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  padding: 0 35px 0 5px;
+  color: #525252;
+
+}
+
+#AddProductForm .inputBox .fa {
+  color: #525252;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  font-size: 1.2em;
+}
+
+#AddProductForm button {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+
+#AddProductForm button {
+  background-color: rgba(88, 68, 29, 0.5);
+  color: white;
+  transition: 0.3s;
+}
+
+#AddProductForm button:hover {
+  background-color: rgba(88, 68, 29, 0.5);
+  border: 2px solid #525252;
+}
+
+.imgFile input {
+  margin: 0 25px 25px;
+}
+
+#AddProductForm .imgFile input {
+  width: 100%;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  padding: 0 35px 0 5px;
+  color: #525252;
+
+}
+
+#elementimg{
+  width: 90%;
+  
+}
