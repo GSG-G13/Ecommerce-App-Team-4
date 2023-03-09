@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="../../css/styles/products.css">
+    <link rel="stylesheet" href="../../css/styles/cartPage.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+
+
+        <nav class="navigation">
+            <a href="../../index.html"><img src="../../css/images/logooo.png" alt="logo" width="100px"
+                    height="120px"></a>
+
+            <ul>
+
+                <li>
+                    <a> <i class="fa-solid fa-cart-shopping"><span href="#">Cart</span> </i></a>
+
+                </li>
+
+
+                <li>
+                    <div class="search">
+                        <input type="text" name="" required="required" placeholder="Search here.." value="">
+                    </div>
+                </li>
+
+            </ul>
+
+        </nav>
+    </header>
+    <main>
+        <button class="btn add-btn"><a href="./addNewProduct.html">Add product</a></button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Image</th>
+                    <th class="th-actions" colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+
+            </tbody>
+        </table>
+    </main>
+
+    <script src="../../js/logic/localStorage.js"></script>
+    <script src="../../js/dom/products.js"></script>
+</body>
+
+</html>
