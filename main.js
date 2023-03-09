@@ -11,17 +11,17 @@ let productPrice = document.getElementById("Product-Price");
 const searchBtn = document.getElementById("search-btn");
 const searchInput = document.getElementById("search-input");
 const myProductsBtn = document.getElementById("myProduct")
-const cartBtn = document.getElementById("cartBtn")
-const myCartContent = document.getElementById("cart-summary")
+const cartBtn = document.getElementById("cartBtn");
+const myCartContent = document.getElementById("cart-summary");
 AddBtn.addEventListener("click", () => {
     addCard.style.display = "flex";
 })
-let productArr = []
+let productArr = [];
 if (localStorage.products) {
-    let localarr = JSON.parse(localStorage.getItem("products"))
+    let localarr = JSON.parse(localStorage.getItem("products"));
     productArr = [...localarr];
 }
-addElementToPage(productArr)
+addElementToPage(productArr);
 seller.addEventListener("click", () => {
     sellerPord.style.display = "block";
 })
@@ -29,15 +29,10 @@ saveBtn.addEventListener("click", (e) => {
     //     e.preventDefault;
     if (productName.value == "" || productPrice.value == "" || Description.value == "" || imgInbut.value == "") {
         return;
-    }
-    getDAta()
-    addToLocalStorage(productArr)
-        ;
-
-
+    };
+    getDAta();
+    addToLocalStorage(productArr);
 })
-console.log(AddProductForm)
-
 const getDAta = () => {
     const opjProduct = {
         id: Date.now,
@@ -48,66 +43,53 @@ const getDAta = () => {
     };
     productArr.push(opjProduct);
     addToLocalStorage(productArr)
-
     productName.value = '';
     productPrice.value = '';
     Description.value = '';
     imgInbut.value = '';
     addCard.style.display = "none";
-
 }
 
 const addToLocalStorage = (arr) => {
-    localStorage.setItem("products", JSON.stringify(arr))
+    localStorage.setItem("products", JSON.stringify(arr));
 
 }
 
 
 searchBtn.addEventListener("click", (e) => {
-    // e.preventDefault
-    searchFromArray(searchInput.value, productArr)
-
-    // console.log(searchFromArray(searchInput.value, productArr));
-
-
+    searchFromArray(searchInput.value, productArr);
 })
 
 
 const searchFromArray = (searchKey, products) => {
     const searchValue = products.filter(arr => arr.name === searchKey);
-
-    console.log(searchValue)
     if (searchValue.length > 0) {
-        addSercheRes(searchValue)
-        // return searchValue[0].name;
+        addSercheRes(searchValue);
     } else {
         return null;
     }
-}
+};
 function addSercheRes(searchValue) {
-    // let arr = [...searchValue]
-    const header = document.getElementById("header")
-    header.innerHTML = "My Products"
-    // searchHeader.appendChild(header)
-    productList.innerHTML = ""
+    const header = document.getElementById("header");
+    header.innerHTML = "My Products";
+    productList.innerHTML = "";
     searchValue.forEach(e => {
-        const item = document.createElement("div")
-        item.className = "featured-item"
+        const item = document.createElement("div");
+        item.className = "featured-item";
         item.innerHTML = `
         <img src="${e.imgurl}" alt="Item 1">
         <h4>${e.name}</h4>
         <h6>$${e.price}</h6>
-        `
+        `;
 
-        let cartBt = document.createElement("button")
-        cartBt.id = "cartBtn"
-        cartBt.innerHTML = `<i class="fa fa-shopping-cart"></i>`
-        item.appendChild(cartBt)
-        productList.appendChild(item)
+        let cartBt = document.createElement("button");
+        cartBt.id = "cartBtn";
+        cartBt.innerHTML = `<i class="fa fa-shopping-cart"></i>`;
+        item.appendChild(cartBt);
+        productList.appendChild(item);
     });
 }
 const products = JSON.parse(localStorage.getItem("products")) || [];
-console.log(products)
 const addSellerProduct = () => {
 
     productList.innerHTML = " ";
@@ -125,58 +107,53 @@ const addSellerProduct = () => {
       <p id="Description">${product.Desc}</p>
     </div>
 `;
-        productItem.setAttribute("dataName", product.name)
-
+        productItem.setAttribute("dataName", product.name);
         productList.appendChild(productItem);
     }
 
-}
+};
 myProductsBtn.addEventListener("click", () => {
-    addSellerProduct()
-})
+    addSellerProduct();
+});
 
-
+// -----------
 function addElementToPage(productArr) {
-    console.log(productArr)
     productArr.forEach(e => {
-        const item = document.createElement("div")
-        item.className = "featured-item"
+        const item = document.createElement("div");
+        item.className = "featured-item";
         item.innerHTML = `
         <img src="${e.imgurl}" alt="Item 1">
         <h4>${e.name}</h4>
         <h6>$${e.price}</h6>
         
         `
-        let cartBt = document.createElement("button")
-        cartBt.id = "cartBtn"
-        cartBt.innerHTML = `<i class="fa fa-shopping-cart"></i>`
-        item.appendChild(cartBt)
-        item.setAttribute("dataName", e.name)
-        productList.appendChild(item)
+        let cartBt = document.createElement("button");
+        cartBt.id = "cartBtn";
+        cartBt.innerHTML = `<i class="fa fa-shopping-cart"></i>`;
+        item.appendChild(cartBt);
+        item.setAttribute("dataName", e.name);
+        productList.appendChild(item);
     });
 }
 
 
 
 function addToLocalCart() {
-    if (localsorage.getItem("cart")) {
-        let newproductArr = [...JSON.parse(localsorage.getItem("cart"))]
-    } else {
-        let newproductArr = []
+    let newproductArr = []
+    if (localStorage.getItem("cart")) {
+        newproductArr = [...JSON.parse(localStorage.getItem("cart"))];
     }
-    let AdCartBtns = document.querySelectorAll("#cartBtn")
+    let AdCartBtns = document.querySelectorAll("#cartBtn");
     AdCartBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
-            let name = btn.parentElement.getAttribute("dataName")
-            console.log(name)
-            let newproductArr2 = productArr.filter(item => item.name == name)
+            let name = btn.parentElement.getAttribute("dataName");
+            let newproductArr2 = productArr.filter(item => item.name == name);
             if (localStorage.getItem("cart")) {
-                newproductArr = [...newproductArr, ...newproductArr2]
+                newproductArr = [...newproductArr, ...newproductArr2];
             }
-            localStorage.setItem("cart", JSON.stringify(newproductArr))
-            // addElementToCart()
+            localStorage.setItem("cart", JSON.stringify(newproductArr));
         })
     })
 
 }
-addToLocalCart()
+addToLocalCart();
