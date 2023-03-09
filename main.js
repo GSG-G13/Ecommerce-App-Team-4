@@ -26,6 +26,7 @@ seller.addEventListener("click", () => {
     sellerPord.style.display = "block";
 })
 saveBtn.addEventListener("click", (e) => {
+    //     e.preventDefault;
     if (productName.value == "" || productPrice.value == "" || Description.value == "" || imgInbut.value == "") {
         return;
     };
