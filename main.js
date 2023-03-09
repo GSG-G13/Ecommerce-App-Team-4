@@ -26,7 +26,7 @@ seller.addEventListener("click", () => {
     sellerPord.style.display = "block";
 })
 saveBtn.addEventListener("click", (e) => {
-//     e.preventDefault;
+    //     e.preventDefault;
     if (productName.value == "" || productPrice.value == "" || Description.value == "" || imgInbut.value == "") {
         return;
     }
@@ -159,28 +159,24 @@ function addElementToPage(productArr) {
 
 
 function addToLocalCart() {
-    if(localsorage.getItem("cart")){
-           let newproductArr = [...JSON.parse(localsorage.getItem("cart"))]
-       }else {
-           let newproductArr = []
-           }
-                let AdCartBtns = document.querySelectorAll("#cartBtn")
+    if (localsorage.getItem("cart")) {
+        let newproductArr = [...JSON.parse(localsorage.getItem("cart"))]
+    } else {
+        let newproductArr = []
+    }
+    let AdCartBtns = document.querySelectorAll("#cartBtn")
     AdCartBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
             let name = btn.parentElement.getAttribute("dataName")
             console.log(name)
             let newproductArr2 = productArr.filter(item => item.name == name)
-            if(localStorage.getItem("cart")){
-                newproductArr = [...newproductArr , ...newproductArr2]
+            if (localStorage.getItem("cart")) {
+                newproductArr = [...newproductArr, ...newproductArr2]
             }
-            localStorage.setItem("cart",JSON.stringify(newproductArr))
+            localStorage.setItem("cart", JSON.stringify(newproductArr))
             // addElementToCart()
         })
     })
-    
+
 }
 addToLocalCart()
-// function addElementToCart(){
-//     let newArr2 = JSON.parse(localStorage.getItem("cart"))
-//     console.log(newArr2)
-// }
