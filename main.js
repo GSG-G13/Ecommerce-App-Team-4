@@ -159,8 +159,12 @@ function addElementToPage(productArr) {
 
 
 function addToLocalCart() {
-    let newproductArr = []
-    let AdCartBtns = document.querySelectorAll("#cartBtn")
+    if(localsorage.getItem("cart"){
+           let newproductArr = [...JSON.parse(localsorage.getItem("cart"))]
+       }else {
+           let newproductArr = []
+           }
+                let AdCartBtns = document.querySelectorAll("#cartBtn")
     AdCartBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
             let name = btn.parentElement.getAttribute("dataName")
