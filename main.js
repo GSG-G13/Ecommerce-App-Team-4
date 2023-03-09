@@ -115,7 +115,7 @@ myProductsBtn.addEventListener("click", () => {
     addSellerProduct();
 });
 
-
+// -----------
 function addElementToPage(productArr) {
     productArr.forEach(e => {
         const item = document.createElement("div");
