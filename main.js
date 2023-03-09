@@ -159,7 +159,7 @@ function addElementToPage(productArr) {
 
 
 function addToLocalCart() {
-    if(localsorage.getItem("cart"){
+    if(localsorage.getItem("cart")){
            let newproductArr = [...JSON.parse(localsorage.getItem("cart"))]
        }else {
            let newproductArr = []
