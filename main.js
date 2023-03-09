@@ -138,10 +138,9 @@ function addElementToPage(productArr) {
 
 
 function addToLocalCart() {
-    if (localsorage.getItem("cart")) {
-        let newproductArr = [...JSON.parse(localsorage.getItem("cart"))];
-    } else {
-        let newproductArr = [];
+    let newproductArr = []
+    if (localStorage.getItem("cart")) {
+        newproductArr = [...JSON.parse(localStorage.getItem("cart"))];
     }
     let AdCartBtns = document.querySelectorAll("#cartBtn");
     AdCartBtns.forEach((btn) => {
